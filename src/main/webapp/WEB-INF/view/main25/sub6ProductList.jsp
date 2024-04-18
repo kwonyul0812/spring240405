@@ -4,6 +4,7 @@
 <head>
     <title>Title</title>
     <style>
+
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -14,7 +15,7 @@
         }
 
         table {
-            width: 50%;
+            width: 100%;
         }
     </style>
 </head>
@@ -26,6 +27,29 @@
     <button>조회</button>
     <%--    <input type="submit" value="조회">--%>
 </form>
+<hr>
+
+<form>
+    카테고리 선택
+    <div>
+        <select name="category" multiple>
+            <c:forEach items="${categoryList}" var="category">
+                <c:set value="false" var="selected"></c:set>
+                <c:forEach items="${prevCategorySelect}" var="prevSelect">
+                    <c:if test="${category.id == prevSelect}">
+                        <c:set var="selected" value="true"></c:set>
+                    </c:if>
+                </c:forEach>
+
+                <option ${selected ? "selected" : ""} value="${category.id}">${category.name}</option>
+            </c:forEach>
+        </select>
+    </div>
+    <div>
+        <button>조회</button>
+    </div>
+</form>
+
 <hr>
 
 <c:if test="${empty productList}" var="emptyProducts">
