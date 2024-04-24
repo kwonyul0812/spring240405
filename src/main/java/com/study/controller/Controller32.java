@@ -102,6 +102,7 @@ public class Controller32 {
             rttr.addFlashAttribute("message", "수정 실패");
         }
 
+
         rttr.addAttribute("id", customer.getId());
         return "redirect:/main32/sub7";
     }
