@@ -10,7 +10,7 @@ import java.util.List;
 public interface Mapper05 {
 
     @Data
-    public class CustomerPaid {
+    static class CustomerPaid {
         private Integer customerId;
         private String customerName;
         private Double paid;
