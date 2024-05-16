@@ -42,4 +42,15 @@ public class Controller42 {
                         "location", "런던"),
                 "item", List.of("축구공", "운동화", "유니폼"));
     }
+
+    @GetMapping("sub4")
+    @ResponseBody
+    public Map<String, Object> method4() {
+        return Map.of("name", "홍길동",
+                "age", 33,
+                "married", false,
+                "info", Map.of("address", "강남",
+                        "country", "한국"),
+                "item", List.of("한옥", "아내"));
+    }
 }
